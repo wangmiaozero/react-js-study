@@ -1,7 +1,7 @@
 //1.导入包
 import React from "react"
 import ReactDOM from "react-dom"
-import '@/class基本使用'
+import '@/class实例方法和静态方法'
 
 //展开运算符
 ReactDOM.render(<div>
