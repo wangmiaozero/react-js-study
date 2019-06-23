@@ -1,21 +1,23 @@
 //1.导入包
 import React from "react"
 import ReactDOM from "react-dom"
-import '@/class实例方法和静态方法'
+/* import '@/class-继承' */
+import '@/class-继承-公共方法'
+//import '@/class实例方法和静态方法'
 
 //展开运算符
-ReactDOM.render(<div>
-233
-</div>,document.querySelector("#app"))
-/* var o2 = {
-  age: 22,
-  address: '中国北京',
-  phone: '139999'
-}
+ReactDOM.render( < div >
+    233 
+    </div>,document.querySelector("#app"))
+    /* var o2 = {
+      age: 22,
+      address: '中国北京',
+      phone: '139999'
+    }
 
-var o1 = {
-  name: 'zs',
-  ...o2
-}
+    var o1 = {
+      name: 'zs',
+      ...o2
+    }
 
-console.log(o1) */
+    console.log(o1) */
