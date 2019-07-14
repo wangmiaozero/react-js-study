@@ -2,7 +2,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 //第一种创建组件的方法 //组件首字母大写
-import './cnmponents/Hello.jsx'
+import './components/Hello.jsx'
 function Hello(props){
   /* return null   //表示组件是空的 不会渲染*/
   // props.name = 'zs'

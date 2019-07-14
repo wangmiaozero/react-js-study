@@ -26,6 +26,7 @@ class American extends Person {
 }
 const a1 = new American('jack', 20)
 console.log(a1)
+a1.sayHello()
 class Chinese extends Person{
 constructor(name,age,IDNumber){
   super(name,age)

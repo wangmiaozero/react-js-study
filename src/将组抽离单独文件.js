@@ -2,7 +2,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 //第一种创建组件的方法 //组件首字母大写 导入组件
-import Hello from '@/cnmponents/Hello'
+import Hello from '@/components/Hello'
 
 const dog = {
   name:'大黄',

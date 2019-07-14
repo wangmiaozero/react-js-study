@@ -1,23 +1,11 @@
-//1.导入包
-import React from "react"
-import ReactDOM from "react-dom"
-/* import '@/class-继承' */
-import '@/class-继承-公共方法'
-//import '@/class实例方法和静态方法'
-
-//展开运算符
-ReactDOM.render( < div >
-    233 
-    </div>,document.querySelector("#app"))
-    /* var o2 = {
-      age: 22,
-      address: '中国北京',
-      phone: '139999'
-    }
-
-    var o1 = {
-      name: 'zs',
-      ...o2
-    }
-
-    console.log(o1) */
+//1导入依赖包
+// import React,{Components} from 'react'
+import React from 'react'
+import ReactDOM from 'react-dom'
+//2.引入组件
+import CmtList from '@/components/2/CmtList'
+//3. 调用render 函数渲染
+ReactDOM.render(<div>
+  122
+  <CmtList></CmtList>
+</div>,document.getElementById('app'))
