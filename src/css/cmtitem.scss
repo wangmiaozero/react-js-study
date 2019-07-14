@@ -1,12 +1,12 @@
-.title{
+:local(.title){
   font-size: 14px;
 }
 
-.content{
+:local(.content){
   font-size: 12px;
 }
 
-.cmtbox{
+:local(.cmtbox){
   border: 1px dashed #ccc;
   margin: 10px;
   padding: 10px;
