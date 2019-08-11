@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btnGet">Fetch发起Get请求</button>
+  <button id="btnPost">Fetch发起Post请求</button>
+  <button id="btnDB">请求豆瓣API</button>
+
+  <script>
+    document.getElementById('btnGet').onclick = function () {
+      // 发起Ajax
+      /* const res = fetch('http://39.106.32.91:3000/api/getlunbo')
+      console.log(res) */
+
+      // 默认 fetch('url') 的话，发起的是 Get 请求
+      fetch('http://39.106.32.91:3000/api/getlunbo')
+        .then(response => {
+          // 这个 response 就是 服务器返回的可读数据流，内部存储的是二进制数据；
+          // .json() 的作用，就是 读取 response 这个二进制数据流，并把 读取到的数据，转为 JSON 格式的 Promise对象
+          return response.json()
+        })
+        .then(data => {
+          // 这里，第二个.then 中，拿到的 data，就是最终的数据
+          console.log(data)
+        })
+    }
+
+
+    document.getElementById('btnPost').onclick = function () {
+
+      // 创建一个表单数据，这个 form 所对应的数据，会以 Post 形式的 请求体 发送出去；
+      /* var form = new FormData()
+      form.append('name', 'zs')
+      form.append('age', 20) */
+
+
+      // 这是 查询参数   name=zs&age=20
+      var sendData = new URLSearchParams()
+      sendData.append('name', 'ls')
+      sendData.append('age', 30)
+
+      // 这是我自己的服务器，接口在运行的时候，启用了 CORS 跨域，所以支持 直接 发送 post 和 get 请求
+      fetch('http://39.106.32.91:3000/api/post', {
+        method: 'POST',
+        body: sendData // 要发送给服务器的数据
+      })
+        .then(response => response.json())
+        .then(data => console.log(data))
+    }
+
+
+
+    document.getElementById('btnDB').onclick = function () {
+      fetch('https://api.douban.com/v2/movie/in_theaters')
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
+  </script>
+</body>
+
+</html>
