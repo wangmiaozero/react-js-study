@@ -16,5 +16,11 @@ export default class Home extends React.Component {
   }
   getMovie = async () =>{
     console.log('ok')
+    
+    // fetch-jsonp 结合 async 和 await 使用
+
+    const res = await this.$http('https://api.douban.com/v2/movie/in_theaters')
+    const data = await res.json()
+    console.log(data)
   }
 }

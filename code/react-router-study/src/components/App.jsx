@@ -8,6 +8,8 @@ import { HashRouter, Route, Link, Redirect } from 'react-router-dom'
 // 导入路由需要组件
 import Home from '@/components/Home'
 import Movie from '@/components/Movie'
+import About from '@/components/About'
+import Top250 from '@/components/Top250'
 
 export default class App extends React.Component {
   constructor() {
@@ -33,6 +35,8 @@ export default class App extends React.Component {
          {/* exact 表示 精确匹配，含义是：只有 Link 的 to 属性，
         完全等于 Route 的 path 的时候，才会展示对应的 component 组件 */}
         <Route path="/movie" component={Movie} exact />
+        <Route path="/movie/:type1" component={Top250} exact />
+        <Route path="/about" component={About}/>
        </div>
     </HashRouter>
   }
