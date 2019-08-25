@@ -1,0 +1,17 @@
+.mlist{
+  display: flex;
+  flex-wrap: wrap;
+  .mitem{
+    margin: 6px;
+    &:hover{
+      box-shadow: 0 0 10px #999;
+      transform: scale(1.03);
+    }
+    img{
+      height: 280px;
+    }
+    p{
+      font-size: 12px;
+    }
+  }
+}

@@ -1,11 +1,11 @@
 {
-  "name": "reactjs",
+  "name": "1.react-douban-web",
   "version": "1.0.0",
   "description": "",
-  "main": "components/虚拟DOM.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open --port 3000 --hot --host 127.0.0.1"
+    "dev": "webpack-dev-server --open --host 127.0.0.1 --port 4321 --hot --compress"
   },
   "keywords": [],
   "author": "",
@@ -31,11 +31,10 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
-    "antd": "^3.22.0",
+    "antd": "^3.3.1",
     "fetch-jsonp": "^1.1.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2"
   }
 }

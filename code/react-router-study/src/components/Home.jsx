@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'antd';
 export default class Home extends React.Component {
   constructor(){
     super()
@@ -7,6 +8,12 @@ export default class Home extends React.Component {
   render() {
     return <div>
       <h1>Home组件</h1>
+      <Button type="primary">Primary</Button>
+      <Button type="primary">Primary</Button>
+      <Button>Default</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="danger">Danger</Button>
+      <Button type="link">Link</Button>
       <button onClick={() => this.goAbout()}>去关于页面</button>
       <button onClick={() => this.getMovie()}>使用fetch-json获取 正在热映的电影</button>
     </div>
