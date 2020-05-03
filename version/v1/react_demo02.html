@@ -1,0 +1,32 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: wangmiao
+ * @Date: 2020-05-03 23:04:35
+ * @LastEditors: wangmiao
+ * @LastEditTime: 2020-05-03 23:14:33
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8" />
+ <title>Hello React!</title>
+ <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+ <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+ <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+ </head>
+ <body>
+  
+ <div id="example"></div>
+ <script>
+
+    var HelloComponent = React.createClass({
+      render:function(){
+        return React.createElement('h1',null,'Hello world');
+      }
+    });
+    ReactDOM.render(React.createElement(HelloComponent,null),document.getElementById('example'))
+ </script>
+  
+ </body>
+ </html>
