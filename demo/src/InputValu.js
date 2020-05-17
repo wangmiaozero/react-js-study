@@ -1,13 +1,14 @@
 /*
- * @Description: 
+ * @Description: 组件化,抽离
  * @Version: 1.0
  * @Autor: wangmiao
  * @Date: 2020-05-10 21:33:35
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-05-10 23:47:05
+ * @LastEditTime: 2020-05-17 20:53:54
  */
 import React,{Component,Fragment} from 'react'
 import './InputValu.css'
+import LiItem from './LiItem'
 // Fragment 减少组件div嵌套 比如:解决flex组件抽离布局问题
 export default class InputValu extends Component{
   constructor(props){
@@ -30,10 +31,10 @@ export default class InputValu extends Component{
           */}
           {/* index.js:1 Warning: Invalid DOM property `for`. Did you mean `htmlFor`? */}
           <label htmlFor="input">人物:</label>
-          <input id="input" value={this.state.inputValue} onChange={this.inputChange.bind(this)} /> 
+          <input id="input" ref={(input)=>{this.input=input}} value={this.state.inputValue} onChange={this.inputChange.bind(this)} /> 
           <button onClick={()=>this.addList()}>增加</button>
         </div>
-        <ul>
+        <ul ref={(ul)=>{this.ul=ul}}>
           {/* 
           dangerouslySetInnerHTML可以解析输入的html
           例如: <h1 style="color:red;">Can only set one of `children` or `props.dangerouslySetInnerHTML`</h1>
@@ -41,7 +42,11 @@ export default class InputValu extends Component{
           dangerouslySetInnerHTML标签下不能有内容
           */}
     {/* { this.state.list.map((item,index)=>{return(<li className="mylis" key={index} dangerouslySetInnerHTML={{__html:item}}><button onClick={this.deleteItem.bind(this,index)}>删除</button></li>)})} */}
-    { this.state.list.map((item,index)=>{return(<li className="mylis" key={index} dangerouslySetInnerHTML={{__html:item}} onClick={this.deleteItem.bind(this,index)}></li>)})}
+    { this.state.list.map((item,index)=>{return(
+      // content 是自定义的
+      <LiItem content={item} key={item+index} index={index} deleteItem={this.deleteItem.bind(this)}  list={this.state.list}/>
+  /*   <li className="mylis" key={index} dangerouslySetInnerHTML={{__html:item}} onClick={this.deleteItem.bind(this,index)}></li> */
+    )})}
         </ul>
       </Fragment>
     )
@@ -49,21 +54,31 @@ export default class InputValu extends Component{
   // 事件
   inputChange(e){
     console.log(e)
-    console.log(e.target.value)
+    console.log(e.target.value,'e.target.value')
     console.log(this)
     // 错误双向绑定
     // this.state.inputValue = e.target.value
     // 调用react setState方法
-    this.setState({
+   /*  this.setState({
       inputValue:e.target.value
+    }) */
+    // 使用react 中的ref
+  
+    console.log(this.input,'this.input.value')
+    console.log(this.input.value,'this.input.value')
+    this.setState({
+      inputValue:this.input.value
     })
   }
   // 增加列表
   addList(){
+    console.log(this.ul.querySelectorAll('li').length,'虚拟dom  异步问题')
     if(this.state.inputValue!=''){
       this.setState({
         list:[...this.state.list,this.state.inputValue],
         inputValue:''
+      },()=>{
+        console.log(  this.ul.querySelectorAll('li').length,'回调函数解决')
       })
     }else{
       alert('this.state.inputValue不能为空')

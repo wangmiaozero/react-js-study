@@ -93,6 +93,7 @@ export default class Counter extends React.Component {
    // console.log(document.getElementById('myh3').innerHTML)
   }
   // 组件的 porps 被改变，会重新触发 componentWillRevceiveProps
+  // 组件第一次存在dom中,函数不会被执行 如果已经存在dom中,函数才会被执行
   componentWillReceiveProps(nextProps){
     // 组件将接受收新属性
     console.log('nextProps 中的属性值是:' + nextProps.initcount)
