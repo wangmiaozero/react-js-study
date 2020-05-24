@@ -1,0 +1,13 @@
+/* 入场动画 */
+.boss-text-enter{ opacity: 0; }
+/* 入场过程 */
+.boss-enter-active{opacity: 1;transition: opacity 1000ms;}
+/* 入场结束 */
+.boss-enter-done{opacity: 1;}
+/* --------------------------------------------- */
+/* 出场 */
+.boss-exit{opacity: 1;}
+/* 出场过程 */
+.boss-exit-active{opacity: 0;transition: opacity 1000ms;}
+/* 出场结束 */
+.boss-exit-deno{opacity: 0;}

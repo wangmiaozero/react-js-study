@@ -4,17 +4,19 @@
  * @Autor: wangmiao
  * @Date: 2020-05-09 21:28:35
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-05-10 22:30:14
+ * @LastEditTime: 2020-05-24 20:32:11
  */
 import React,{Component} from 'react';
 import logo from './logo.svg';
 import InputValu from './InputValu';
+import AnmationComponent from './AnimationComponent';
 // Fragment 减少组件div嵌套 比如:解决flex组件抽离布局问题
 class App extends Component{
   render(){
     return (
       <div className="App">
         <InputValu></InputValu>
+        {<AnmationComponent></AnmationComponent>}
         <div ><img src={logo} /></div>
       </div>
     )

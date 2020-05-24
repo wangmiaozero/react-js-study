@@ -4,10 +4,11 @@
  * @Autor: wangmiao
  * @Date: 2020-05-16 22:48:44
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-05-17 17:12:59
+ * @LastEditTime: 2020-05-24 20:57:35
  */
 import React, { Component } from 'react';
  import PropTypes from 'prop-types';
+ 
 
 /*  父组件写的什么key 子组件就点什么key 通过props获取 */
 /* class LiItem extends Component {
@@ -30,6 +31,21 @@ class LiItem extends Component {
   super(props)
   this.hendleClick = this.hendleClick.bind(this)
  }
+  // 运行阶段的第一个生命周期函数
+  // 使用这个 函数，可以按需更新页面；减少不必要的 DOM 渲染；
+ shouldComponentUpdate(nextProps,nextState){
+   // 需求3：偶数更新页面；奇数不更新页面；
+   // return false
+   // 注意： 在 shouldComponentUpdate 方法中，
+   // 如果想获取 最新的 state 值，千万不要使用 this.state.***
+   // return false; // 解决组件频繁渲染问题
+   if(nextProps.content!==this.props.content){
+     return true;
+   }else{
+     return false;
+   }
+}
+
   render() { 
   return ( 
   <li onClick={()=>this.hendleClick()}>{this.props.avname}--{this.props.content}</li> 
@@ -39,8 +55,6 @@ class LiItem extends Component {
     console.log('只能获取,因为react是单向数据流',this.props.list)
     console.log(this.props.index)
     this.props.deleteItem(this.props.index)
-
-  
   }
 }
  

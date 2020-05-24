@@ -4,11 +4,13 @@
  * @Autor: wangmiao
  * @Date: 2020-05-10 21:33:35
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-05-17 20:53:54
+ * @LastEditTime: 2020-05-24 21:07:28
  */
 import React,{Component,Fragment} from 'react'
 import './InputValu.css'
 import LiItem from './LiItem'
+import { CSSTransition,TransitionGroup} from 'react-transition-group'
+import './AnimationComponent.css'
 // Fragment 减少组件div嵌套 比如:解决flex组件抽离布局问题
 export default class InputValu extends Component{
   constructor(props){
@@ -18,6 +20,12 @@ export default class InputValu extends Component{
       list:['八重樱','卡莲']
     }
   }
+ componentDidMount(){
+   // axios来发送请求 并设置list数据
+   /* this.setState({
+
+   }) */
+ }
   render(){
     return(
       <Fragment>
@@ -34,7 +42,9 @@ export default class InputValu extends Component{
           <input id="input" ref={(input)=>{this.input=input}} value={this.state.inputValue} onChange={this.inputChange.bind(this)} /> 
           <button onClick={()=>this.addList()}>增加</button>
         </div>
+    
         <ul ref={(ul)=>{this.ul=ul}}>
+         <TransitionGroup>
           {/* 
           dangerouslySetInnerHTML可以解析输入的html
           例如: <h1 style="color:red;">Can only set one of `children` or `props.dangerouslySetInnerHTML`</h1>
@@ -44,10 +54,20 @@ export default class InputValu extends Component{
     {/* { this.state.list.map((item,index)=>{return(<li className="mylis" key={index} dangerouslySetInnerHTML={{__html:item}}><button onClick={this.deleteItem.bind(this,index)}>删除</button></li>)})} */}
     { this.state.list.map((item,index)=>{return(
       // content 是自定义的
+      <CSSTransition 
+        timeout={1000}
+        key={index+1}
+        classNames='boss-text'
+        unmountOnExit
+        appear={true}
+      >
       <LiItem content={item} key={item+index} index={index} deleteItem={this.deleteItem.bind(this)}  list={this.state.list}/>
+      </CSSTransition>
   /*   <li className="mylis" key={index} dangerouslySetInnerHTML={{__html:item}} onClick={this.deleteItem.bind(this,index)}></li> */
     )})}
+    </TransitionGroup>
         </ul>
+    
       </Fragment>
     )
   }
