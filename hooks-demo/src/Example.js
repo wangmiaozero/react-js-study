@@ -1,10 +1,10 @@
 /*
- * @Description: 例子
+ * @Description: 例子 生命周期
  * @Version: 1.0
  * @Autor: wangmiao
  * @Date: 2020-05-28 13:42:06
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-05-28 14:41:59
+ * @LastEditTime: 2020-05-29 20:27:10
  */ 
 
 /* 
@@ -35,13 +35,19 @@ class Example extends Component {
  
 
 // hooks 写法
-import React, { useState  } from 'react';
+import React, { useState,useEffect  } from 'react';
 function Example(){
   // useState 申明 
   // const [ count, setCount ] = useState(0)// 数组结构
   let _userState = useState(0);
   let count = _userState[0]
   let setCount = _userState[1];
+  // useEffect 相当于componentDidMount/componentDidUpdate
+  //  React 中componentDidMount,就相当于Vue中mounted
+  //  运行阶段 第三个生命周期函数 【组件已被更新】
+  useEffect(()=>{
+    console.log(`useEffect=> ${count}`)
+  })
   return (
     <div>
        <p> 数值:{count}</p>

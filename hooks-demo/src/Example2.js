@@ -1,10 +1,10 @@
 /*
- * @Description: 例子
+ * @Description: 例子hooks
  * @Version: 1.0
  * @Autor: wangmiao
  * @Date: 2020-05-28 13:42:06
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-05-28 15:53:54
+ * @LastEditTime: 2020-05-29 20:26:59
  */ 
 
 /* 
@@ -25,8 +25,8 @@ function Example2(){
        <p> 性别:{sex}</p>
        <p> 工作:{work}</p>
        <button onClick={()=>setAge(age+1)}>增加年龄</button>
-       {/* <button onClick={()=>setSex(sex='女')}>改变性别</button>
-       <button onClick={()=>setWork(work='前端')}>改变工作</button> */}
+       <button onClick={()=>setSex(sex='女')}>改变性别</button>
+       <button onClick={()=>setWork(work='前端')}>改变工作</button>
     </div>
   )
 }
