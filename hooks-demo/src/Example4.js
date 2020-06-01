@@ -4,7 +4,7 @@
  * @Autor: wangmiao
  * @Date: 2020-05-28 13:42:06
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-05-30 17:54:57
+ * @LastEditTime: 2020-06-01 14:14:14
  */ 
 
 /* 
@@ -15,24 +15,25 @@
 // hooks 写法
 import React, { useState,useEffect,createContext, useContext,useReducer } from 'react'
 
-function Example4(){
-  // useState 申明 
-   const [ count, setCount ] = useState(0)// 数组结构
-  // useEffect 相当于componentDidMount/componentDidUpdate
-  //  React 中componentDidMount,就相当于Vue中mounted
-  //  运行阶段 第三个生命周期函数 【组件已被更新】
-  useEffect(()=>{
-    console.log(`useEffect=> ${count}`)
-  })
+function ReducerDemo() {
+  const [count,dispatch] = useReducer((state,action)=>{
+    switch(action){
+      case 'add':
+        return state+1;
+      case 'sub':
+        return state-1
+        default:
+          return state
+    }
+  },0)
+
   return (
     <div>
-       <p> 数值:{count}</p>
-       <button onClick={()=>setCount(count+1)}>增加</button>
-     {/*   <CountCountext.Provider value = {count}>
-         <Counter/>
-       </CountCountext.Provider> */}
+      <h2>现在的分数{count}</h2>
+      <button onClick={()=>{dispatch('add')}}>Increment</button>
+      <button onClick={()=>{dispatch('sub')}}>Decrement</button>
     </div>
   )
 }
 
-export default Example4;
+export default ReducerDemo
