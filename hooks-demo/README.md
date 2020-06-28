@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: wangmiao
+ * @Date: 2020-05-28 11:50:42
+ * @LastEditors: wangmiao
+ * @LastEditTime: 2020-06-03 10:56:04
+--> 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +74,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+学习地址:
+https://juejin.im/post/5ed663c2518825430d0421d7?utm_source=gold_browser_extension#heading-9

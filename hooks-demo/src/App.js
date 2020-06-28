@@ -4,7 +4,7 @@
  * @Autor: wangmiao
  * @Date: 2020-05-28 11:50:42
  * @LastEditors: wangmiao
- * @LastEditTime: 2020-06-01 20:34:44
+ * @LastEditTime: 2020-06-28 11:19:30
  */ 
 import React from 'react';
 import logo from './logo.svg';
@@ -15,6 +15,8 @@ import Example3 from './Example3';
 import ReducerDemo from './Example4';
 import Example5 from './Example5/Example5';
 import Example6 from './Example6';
+import Example7 from './Example7';
+import Example8 from './Example8';
 import Home from './components/Home';
 import List from './components/List';
 import { BrowserRouter as Router,Route,Link } from 'react-router-dom';
@@ -40,6 +42,12 @@ function App() {
         <br/>
         Example6
         <Example6/>
+        <br/>
+        Example7
+        <Example7/>
+        <br/>
+        Example8--ref
+        <Example8/>
       </header>
       <Router>
          <ul>
