@@ -45,7 +45,7 @@ class Example extends Component {
  
 
 // hooks 写法
-import React, { useState,useEffect  } from 'react';
+import React, { useState,useEffect } from 'react';
 function Example(){
   // useState 申明 
   // const [ count, setCount ] = useState(0)// 数组结构

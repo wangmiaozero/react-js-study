@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: wangmiao
  * @Date: 2020-05-28 11:50:42
- * @LastEditors: wangmiao
- * @LastEditTime: 2020-06-28 11:19:30
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-07-28 19:36:37
  */ 
 import React from 'react';
 import logo from './logo.svg';
@@ -17,6 +17,7 @@ import Example5 from './Example5/Example5';
 import Example6 from './Example6';
 import Example7 from './Example7';
 import Example8 from './Example8';
+import Example9 from './Example9';
 import Home from './components/Home';
 import List from './components/List';
 import { BrowserRouter as Router,Route,Link } from 'react-router-dom';
@@ -48,6 +49,8 @@ function App() {
         <br/>
         Example8--ref
         <Example8/>
+        Example9 
+        <Example9/>
       </header>
       <Router>
          <ul>
