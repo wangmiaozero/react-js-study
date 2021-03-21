@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: 
  * @Date: 2020-08-07 14:45:16
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-07 19:25:57
+ * @LastEditors: wangmiao
+ * @LastEditTime: 2021-03-21 12:59:29
  */
 import React, { Component } from 'react';
 // 导入store
@@ -32,7 +32,7 @@ class Home extends Component {
   render() { 
     return ( 
       <>
-      <button onClick={this.handleClick}>btn</button>
+      <button onClick={this.handleClick}>发送一个action</button>
       <div>{store.getState().value}</div>
       </>
      );
